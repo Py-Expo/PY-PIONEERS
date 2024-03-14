@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            background-image: url("BACKGROUNDIMAGE.png");
+            background-repeat: no-repeat;
+            background-size:cover ;
+        }
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 110vh;
+            background: rgba(39, 39, 39, 0.4);
+        }
+        .nav {
+            position: fixed;
+            top: 0;
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            height: 100px;
+            line-height: 100px;
+            background: linear-gradient(rgba(39,39,39, 0.6), transparent);
+            z-index: 100;
+        }
+
+        .nav-logo p {
+            color: white;
+            font-size: 25px;
+            font-weight: 600;
+        }
+
+        .nav-menu ul {
+            display: flex;
+        }
+
+        .nav-menu ul li {
+            list-style-type: none;
+        }
+
+        .nav-menu ul li .link {
+            text-decoration: none;
+            font-weight: 500;
+            color: #070606;
+            padding-bottom: 15px;
+            margin: 0 25px;
+        }
+
+        .link:hover,
+        .active {
+            border-bottom: 2px solid #fff;
+        }
+
+        .nav-button .btn {
+            width: 13px;
+            height: 100px;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.4);
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: .3s ease;
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        #options-container {
+            display: flex;
+            align-items: center;
+            justify-items: flex-start;
+            flex-direction:row;
+            text-align: center;
+            margin-top: 0px; 
+          
+        }
+        #options2-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            margin-top: 1px; /* Adjust the margin based on your layout */
+        }
+        #options {
+            font-size: 24px;
+            margin-bottom: 200px;
+           
+        }
+
+        .option-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 75px;
+            font-size: 30px;
+            
+            cursor: pointer;
+            border: none;
+            border-radius: 50px;
+            margin: 50px;
+            height: 20px;
+            background-color: #0e0d0e;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        .option-btn:hover {
+            background-color: #050405;
+        }
+    </style>
+</head>
+<body>
+   
+        <nav class="nav">
+            <div class="nav-logo">
+                <img src="logo.png" alt="Company Logo" style="width: 100px; height: 100px; float: left; margin-right: 1000px;">
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="page1.html" class="link active"><b>HOME</b></a></li>
+                    <li><a href="abot.html" class="link"><b>ABOUT</b></a></li>
+                    <li><a href="contact.html" class="link"><b>CONTACT </b></a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="options-container">
+            <button class="option-btn" onclick="redirectToNextPage()"><b>PYTHON</b></button>
+        </div>
+    
+
+    <script>
+        function makeChoice(choice) {
+            alert("You chose " + choice + "!");
+        }
+        function redirectToNextPage() {
+        // Use window.location.href to navigate to the next page
+        window.location.href = "page5.html";
+    }
+    
+    </script>
+</body>
+</html>

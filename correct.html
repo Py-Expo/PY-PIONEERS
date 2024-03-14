@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yes, You're Correct!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #040303;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('BACKGROUNDIMAGE.png');
+             background-repeat: no-repeat;
+             background-size: cover;
+
+        }
+        .container {
+            background-color: transparent;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+        h1 {
+            color: #080809;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .image-container {
+            position: relative;
+            overflow: hidden;
+        }
+        .image-effect {
+            width: 200px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            animation: bounce 1s infinite alternate, rotate 4s infinite linear;
+            transition: transform 0.3s;
+        }
+        .image-effect:hover {
+            transform: scale(1.2) rotate(360deg);
+        }
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-20px); }
+        }
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ffcc00;
+            border-radius: 50%;
+            animation: confetti-fall 5s linear infinite;
+            transform-origin: top left;
+        }
+        @keyframes confetti-fall {
+            0% { transform: translateY(-100vh) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #08090a;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #09040d;
+        }
+        button:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Yes, You're Correct!</h1>
+        <div class="image-container">
+            <img src="https://via.placeholder.com/200" alt="Thumbs Up" class="image-effect">
+        </div>
+        <p>Congratulations! You've answered correctly.</p>
+        <button onclick="celebrate()">Celebrate</button>
+    </div>
+    <!-- Confetti Effect -->
+    <div class="confetti"></div>
+
+    <script>
+        function celebrate() {
+            alert("🎉🥳 Congratulations! Let's celebrate! 🥳🎉");
+            // Generate confetti
+            generateConfetti();
+        }
+
+        function generateConfetti() {
+            const confettiContainer = document.createElement('div');
+            confettiContainer.classList.add('confetti');
+            confettiContainer.style.left = `${Math.random() * 100}vw`;
+            document.body.appendChild(confettiContainer);
+            // Remove confetti after animation ends
+            confettiContainer.addEventListener('animationend', () => {
+                confettiContainer.remove();
+            });
+        }
+    </script>
+</body>
+</html>
